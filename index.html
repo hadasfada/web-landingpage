@@ -3,7 +3,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./assets/custom.css">
-    <title>Trucking:V - A FiveM trucking roleplay server</title>
+    <title>SpecterV</title>
+        <script>
+        var Flip = false;
+
+        var CurStr = "";
+        var Pos = 0;
+        var Invert = false;
+
+        var TextL = "SpecterV";
+        var TextR = "Kalitenin Adresi";
+
+        function loop() {
+            var Target = Flip ? TextR : TextL;
+
+            if (Pos > Target.length) {
+                Invert = true;
+            } else if (Pos < 0) {
+                if (Invert) {
+                    Flip = !Flip;
+                    Target = Flip ? TextR : TextL;
+
+                    Pos = 0;
+                }
+
+                Invert = false;
+            }
+
+            CurStr = Target.substring(0, Pos);
+            Pos += (Invert ? -1 : 1);
+
+            if (CurStr.length == 0)
+                CurStr = "SpecterV";
+
+            document.getElementsByTagName("title")[0].innerHTML = CurStr;
+        }
+
+        setInterval(loop, 300);
+        </script>
 	<meta name="description" content="This is a realistic trucking roleplay server based on the multiplayer modification for GTAV called FiveM">
 </head>
 <body>
@@ -17,9 +54,11 @@
         </div>
         
         <div class="title">
-            <small>Welcome to our</small>
-            <h1>World of <br>Trucking</h1>
-            <button class="glow-on-hover" type="button">Play now!</button>
+            <small>FiveM specter</small>
+            <h1>Specter<br>Fivem!</h1>
+            <a href="hadasfada.github.io" rel="noopener"> 
+                <button class="glow-on-hover" type="button">Sen de Katıl!</button>
+            </a>
         </div>
 
         <div class="side-bar">
@@ -28,11 +67,11 @@
 			</a>
 
             <div class="socials">
-                <a href="#Coming Soon">
+                <a href="kurallar">
 					<img src="./images/tw.png" alt="twitter logo">
 				</a>
 				
-				<a href="https://discord.gg/3ySTjZUpgB" target="_blank">
+				<a href="https://discord.gg/specterv" target="_blank">
 					<img src="./images/discord.png" alt="discord logo">
 				</a>
 
@@ -42,11 +81,11 @@
             </div>
 
             <div class="other-links">
-                <a href="#Coming Soon">
+                <a href="#bilgi">
                     <img src="./images/info.png" alt="info icon" id="info_pop">
                 </a>
 
-                <a href="#Coming Soon">
+                <a href="oburlink">
                     <img src="./images/share.png" alt="share icon">
                 </a>
                 
@@ -66,13 +105,13 @@
 
     <div class="popup_container" id="popup_container">
         <div class="popup">
-            <h1>What is this?</h1>
+            <h1>Ne ki bu?</h1>
             <br><p>
-                This is Trucking:V, a roleplay server for FiveM<br>
-                The main element of this server, as you guessed is Trucking,<br> 
-                although it comes with every feature a normal roleplay server would have.<br>
+                SpecterV specterlı specter ve specter<br>
+                Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.<br> 
+                At vero eos et accusamus et iusto odio dignissimos<br>
             </p><br>
-            <button id="popup_close">Close</button>
+            <button id="popup_close">Kapat</button>
         </div>
     </div>
 
